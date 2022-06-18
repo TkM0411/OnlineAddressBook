@@ -18,6 +18,7 @@ namespace OnlineAddressBook.App
             {
                 components.Dispose();
             }
+            _connection.Dispose();
             base.Dispose(disposing);
         }
 

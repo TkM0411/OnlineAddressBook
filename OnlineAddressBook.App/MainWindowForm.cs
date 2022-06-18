@@ -1,26 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace OnlineAddressBook.App
 {
     public partial class MainWindowForm : Form
     {
-        private const string dbConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={0}\LocalDatabase\AddressBookDB.mdf;Integrated Security=True";
+        #region Fields
+        
+        #endregion
 
+        #region Constructor
         public MainWindowForm()
         {
             InitializeComponent();
         }
+        #endregion
 
+        #region Event Handlers
         private void btnPrevious_Click(object sender, EventArgs e)
         {
 
@@ -35,5 +31,10 @@ namespace OnlineAddressBook.App
         {
 
         }
+        #endregion
+
+        #region Private Methods
+       
+        #endregion
     }
 }
