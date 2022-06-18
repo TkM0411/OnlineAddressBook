@@ -1,4 +1,5 @@
-﻿using OnlineAddressBook.App.Entities;
+﻿using OnlineAddressBook.App.DataRepositories.Database;
+using OnlineAddressBook.App.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,8 +10,8 @@ namespace OnlineAddressBook.App
     public partial class MainWindowForm : Form
     {
         #region Fields
-        private OnlineAddressBookDbContext _context = null;
         private List<AddressBookEntity> addressBookEntityCollection = new List<AddressBookEntity>();
+        SQLDatabaseRepository _repository = new SQLDatabaseRepository();
         private int counter = 0;
         #endregion
 
@@ -18,8 +19,7 @@ namespace OnlineAddressBook.App
         public MainWindowForm()
         {
             InitializeComponent();
-            _context = new OnlineAddressBookDbContext();
-            addressBookEntityCollection = _context.AddressBook.ToList();
+            addressBookEntityCollection = _repository.GetAddresses();
         }
         #endregion
 
@@ -50,8 +50,8 @@ namespace OnlineAddressBook.App
                 Address = rtbAddress.Text
             };
             addressBookEntityCollection.Add(entity);
-            _context.AddressBook.Add(entity);
-            _context.SaveChanges();
+            _repository.AddAddress(entity);
+            _repository.Save();
         }
 
         private void btnNext_Click(object sender, EventArgs e)

@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using OnlineAddressBook.App.Entities;
 
-namespace OnlineAddressBook.App.Entities
+namespace OnlineAddressBook.App.DataRepositories.Database
 {
     class OnlineAddressBookDbContext : DbContext
     {
