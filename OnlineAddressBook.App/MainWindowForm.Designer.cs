@@ -134,7 +134,7 @@ namespace OnlineAddressBook.App
             this.tblpnlEditableControls.ColumnCount = 3;
             this.tblpnlEditableControls.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.40096F));
             this.tblpnlEditableControls.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.59904F));
-            this.tblpnlEditableControls.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
+            this.tblpnlEditableControls.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 201F));
             this.tblpnlEditableControls.Controls.Add(this.lblName, 0, 0);
             this.tblpnlEditableControls.Controls.Add(this.lblPhoneNumber, 0, 1);
             this.tblpnlEditableControls.Controls.Add(this.lblAddress, 0, 2);
@@ -193,7 +193,7 @@ namespace OnlineAddressBook.App
             this.txtName.Location = new System.Drawing.Point(122, 7);
             this.txtName.Margin = new System.Windows.Forms.Padding(3, 7, 3, 3);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(294, 25);
+            this.txtName.Size = new System.Drawing.Size(293, 25);
             this.txtName.TabIndex = 3;
             // 
             // txtPhoneNumber
@@ -202,7 +202,7 @@ namespace OnlineAddressBook.App
             this.txtPhoneNumber.Location = new System.Drawing.Point(122, 48);
             this.txtPhoneNumber.Margin = new System.Windows.Forms.Padding(3, 7, 3, 3);
             this.txtPhoneNumber.Name = "txtPhoneNumber";
-            this.txtPhoneNumber.Size = new System.Drawing.Size(294, 25);
+            this.txtPhoneNumber.Size = new System.Drawing.Size(293, 25);
             this.txtPhoneNumber.TabIndex = 4;
             // 
             // rtbAddress
@@ -210,7 +210,7 @@ namespace OnlineAddressBook.App
             this.rtbAddress.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rtbAddress.Location = new System.Drawing.Point(122, 85);
             this.rtbAddress.Name = "rtbAddress";
-            this.rtbAddress.Size = new System.Drawing.Size(294, 118);
+            this.rtbAddress.Size = new System.Drawing.Size(293, 118);
             this.rtbAddress.TabIndex = 5;
             this.rtbAddress.Text = "";
             // 
@@ -227,6 +227,7 @@ namespace OnlineAddressBook.App
             this.MaximizeBox = false;
             this.Name = "MainWindowForm";
             this.Text = "Online Address Book";
+            this.Load += new System.EventHandler(this.MainWindowForm_Load);
             this.pnlMain.ResumeLayout(false);
             this.tblpnlMainContainer.ResumeLayout(false);
             this.tblpnlButtons.ResumeLayout(false);
