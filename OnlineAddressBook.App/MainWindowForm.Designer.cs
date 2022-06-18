@@ -134,7 +134,7 @@ namespace OnlineAddressBook.App
             this.tblpnlEditableControls.ColumnCount = 3;
             this.tblpnlEditableControls.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.40096F));
             this.tblpnlEditableControls.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.59904F));
-            this.tblpnlEditableControls.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 201F));
+            this.tblpnlEditableControls.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 202F));
             this.tblpnlEditableControls.Controls.Add(this.lblName, 0, 0);
             this.tblpnlEditableControls.Controls.Add(this.lblPhoneNumber, 0, 1);
             this.tblpnlEditableControls.Controls.Add(this.lblAddress, 0, 2);
@@ -158,7 +158,7 @@ namespace OnlineAddressBook.App
             this.lblName.Location = new System.Drawing.Point(3, 3);
             this.lblName.Margin = new System.Windows.Forms.Padding(3);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(113, 35);
+            this.lblName.Size = new System.Drawing.Size(112, 35);
             this.lblName.TabIndex = 0;
             this.lblName.Text = "Name";
             this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -170,7 +170,7 @@ namespace OnlineAddressBook.App
             this.lblPhoneNumber.Location = new System.Drawing.Point(3, 44);
             this.lblPhoneNumber.Margin = new System.Windows.Forms.Padding(3);
             this.lblPhoneNumber.Name = "lblPhoneNumber";
-            this.lblPhoneNumber.Size = new System.Drawing.Size(113, 35);
+            this.lblPhoneNumber.Size = new System.Drawing.Size(112, 35);
             this.lblPhoneNumber.TabIndex = 1;
             this.lblPhoneNumber.Text = "Phone Number";
             this.lblPhoneNumber.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -182,7 +182,7 @@ namespace OnlineAddressBook.App
             this.lblAddress.Location = new System.Drawing.Point(3, 85);
             this.lblAddress.Margin = new System.Windows.Forms.Padding(3);
             this.lblAddress.Name = "lblAddress";
-            this.lblAddress.Size = new System.Drawing.Size(113, 118);
+            this.lblAddress.Size = new System.Drawing.Size(112, 118);
             this.lblAddress.TabIndex = 2;
             this.lblAddress.Text = "Address";
             this.lblAddress.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -190,8 +190,9 @@ namespace OnlineAddressBook.App
             // txtName
             // 
             this.txtName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtName.Location = new System.Drawing.Point(122, 7);
+            this.txtName.Location = new System.Drawing.Point(121, 7);
             this.txtName.Margin = new System.Windows.Forms.Padding(3, 7, 3, 3);
+            this.txtName.MaxLength = 30;
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(293, 25);
             this.txtName.TabIndex = 3;
@@ -199,8 +200,9 @@ namespace OnlineAddressBook.App
             // txtPhoneNumber
             // 
             this.txtPhoneNumber.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtPhoneNumber.Location = new System.Drawing.Point(122, 48);
+            this.txtPhoneNumber.Location = new System.Drawing.Point(121, 48);
             this.txtPhoneNumber.Margin = new System.Windows.Forms.Padding(3, 7, 3, 3);
+            this.txtPhoneNumber.MaxLength = 15;
             this.txtPhoneNumber.Name = "txtPhoneNumber";
             this.txtPhoneNumber.Size = new System.Drawing.Size(293, 25);
             this.txtPhoneNumber.TabIndex = 4;
@@ -208,7 +210,8 @@ namespace OnlineAddressBook.App
             // rtbAddress
             // 
             this.rtbAddress.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rtbAddress.Location = new System.Drawing.Point(122, 85);
+            this.rtbAddress.Location = new System.Drawing.Point(121, 85);
+            this.rtbAddress.MaxLength = 200;
             this.rtbAddress.Name = "rtbAddress";
             this.rtbAddress.Size = new System.Drawing.Size(293, 118);
             this.rtbAddress.TabIndex = 5;
