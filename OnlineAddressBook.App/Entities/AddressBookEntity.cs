@@ -20,5 +20,10 @@ namespace OnlineAddressBook.App.Entities
         [Required]
         [MaxLength(200)]
         public string Address { get; set; }
+
+        public override string ToString()
+        {
+            return Address.Contains(",") ? $"{Id},{Name},{PhoneNumber},{ string.Format("\"{0}\"", Address)}" : $"{Id},{Name},{PhoneNumber},{Address}";
+        }
     }
 }
