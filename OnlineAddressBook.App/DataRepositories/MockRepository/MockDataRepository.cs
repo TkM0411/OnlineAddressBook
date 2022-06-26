@@ -41,7 +41,7 @@ namespace OnlineAddressBook.App.DataRepositories.MockRepository
         #endregion
 
         #region IDataRepository Implementation
-        public List<AddressBookEntity> GetAddresses()
+        public ICollection<AddressBookEntity> GetAddresses()
         {
             return _mockRepository;
         }

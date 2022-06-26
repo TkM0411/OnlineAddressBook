@@ -1,4 +1,5 @@
-﻿using OnlineAddressBook.App.DataRepositories.Database;
+﻿using OnlineAddressBook.App.DataRepositories;
+using OnlineAddressBook.App.DataRepositories.MockRepository;
 using OnlineAddressBook.App.Entities;
 using System;
 using System.Collections.Generic;
@@ -10,8 +11,8 @@ namespace OnlineAddressBook.App
     public partial class MainWindowForm : Form
     {
         #region Fields
-        private List<AddressBookEntity> addressBookEntityCollection = new List<AddressBookEntity>();
-        SQLDatabaseRepository _repository = new SQLDatabaseRepository();
+        private ICollection<AddressBookEntity> addressBookEntityCollection = new List<AddressBookEntity>();
+        IDataRepository _repository = new MockDataRepository();
         private int counter = 0;
         #endregion
 

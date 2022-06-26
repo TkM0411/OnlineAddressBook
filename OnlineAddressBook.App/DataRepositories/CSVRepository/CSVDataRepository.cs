@@ -13,7 +13,7 @@ namespace OnlineAddressBook.App.DataRepositories.CSVRepository
     {
         #region Fields
         private string _csvDataFileName;
-        private List<AddressBookEntity> entityCollection;
+        private ICollection<AddressBookEntity> entityCollection;
         #endregion
 
         #region Constructor
@@ -36,14 +36,14 @@ namespace OnlineAddressBook.App.DataRepositories.CSVRepository
             entityCollection.Add(entity);
         }
 
-        public List<AddressBookEntity> GetAddresses()
+        public ICollection<AddressBookEntity> GetAddresses()
         {
             if (File.Exists(_csvDataFileName))
             {
                 string[] csvRecords = File.ReadAllLines(_csvDataFileName);
                 if (csvRecords != null && csvRecords.Length > 0)
                 {
-                    List<AddressBookEntity> addressBookEntities = new List<AddressBookEntity>();
+                    ICollection<AddressBookEntity> addressBookEntities = new List<AddressBookEntity>();
                     TextFieldParser textFieldParser = null;
                     foreach (string record in csvRecords)
                     {
@@ -75,6 +75,7 @@ namespace OnlineAddressBook.App.DataRepositories.CSVRepository
                                 }
                             }
                             textFieldParser.Close();
+                            return addressBookEntities;
                         }
                     }
                 }

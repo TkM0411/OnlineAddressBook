@@ -19,7 +19,7 @@ namespace OnlineAddressBook.App.DataRepositories.Database
         #endregion
 
         #region IDataRepository Implementation
-        public List<AddressBookEntity> GetAddresses()
+        public ICollection<AddressBookEntity> GetAddresses()
         {
             return _context.AddressBook.ToList();
         }

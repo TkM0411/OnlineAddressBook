@@ -6,7 +6,7 @@ namespace OnlineAddressBook.App.DataRepositories
     public interface IDataRepository
     {
         void AddAddress(AddressBookEntity entity);
-        List<AddressBookEntity> GetAddresses();
+        ICollection<AddressBookEntity> GetAddresses();
         void Save();
     }
 }
