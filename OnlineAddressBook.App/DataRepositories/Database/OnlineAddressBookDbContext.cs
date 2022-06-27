@@ -3,22 +3,33 @@ using OnlineAddressBook.App.Entities;
 
 namespace OnlineAddressBook.App.DataRepositories.Database
 {
-    class OnlineAddressBookDbContext : DbContext
+    public class OnlineAddressBookDbContext : DbContext
     {
+        #region Fields
         private const string DevConnectionString = @"Data Source=.\DEVSERVER;Initial Catalog=OnlineAddressBookDB;Integrated Security=True";
+        private readonly string _connectionString;
+        #endregion
 
-        public OnlineAddressBookDbContext()
+        #region Properties
+        public DbSet<AddressBookEntity> AddressBook { get; set; }
+        #endregion
+
+        #region Constructor
+        public OnlineAddressBookDbContext(string connectionString = "")
         {
-            Database.SetConnectionString(DevConnectionString);
+            _connectionString = string.IsNullOrWhiteSpace(connectionString) ? DevConnectionString : connectionString;
+            Database.SetConnectionString(_connectionString);
             Database.EnsureCreated();
         }
+        #endregion
 
-        public DbSet<AddressBookEntity> AddressBook { get; set; }
+        #region Overridden Methods
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(DevConnectionString);
-            
+
             base.OnConfiguring(optionsBuilder);
         }
+        #endregion
     }
 }

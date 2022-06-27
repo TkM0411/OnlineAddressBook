@@ -17,14 +17,9 @@ namespace OnlineAddressBook.App.DataRepositories.CSVRepository
         #endregion
 
         #region Constructor
-        public CSVDataRepository()
+        public CSVDataRepository(string csvDataFileName = "")
         {
-            _csvDataFileName = $"{Application.ExecutablePath}\\Data.csv";
-            entityCollection = new List<AddressBookEntity>();
-        }
-
-        public CSVDataRepository(string csvDataFileName)
-        {
+            _csvDataFileName = string.IsNullOrWhiteSpace(csvDataFileName) ? $"{Application.ExecutablePath}\\Data.csv" : csvDataFileName;
             _csvDataFileName = csvDataFileName;
             entityCollection = new List<AddressBookEntity>();
         }

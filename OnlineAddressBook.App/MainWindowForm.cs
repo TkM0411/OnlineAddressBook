@@ -1,5 +1,4 @@
 ﻿using OnlineAddressBook.App.DataRepositories;
-using OnlineAddressBook.App.DataRepositories.MockRepository;
 using OnlineAddressBook.App.Entities;
 using System;
 using System.Collections.Generic;
@@ -12,7 +11,7 @@ namespace OnlineAddressBook.App
     {
         #region Fields
         private ICollection<AddressBookEntity> addressBookEntityCollection = new List<AddressBookEntity>();
-        IDataRepository _repository = new MockDataRepository();
+        IDataRepository _repository;
         private int counter = 0;
         #endregion
 
@@ -20,6 +19,11 @@ namespace OnlineAddressBook.App
         public MainWindowForm()
         {
             InitializeComponent();
+        }
+
+        public MainWindowForm(IDataRepository dataRepository) : this()
+        {
+            _repository = dataRepository;
             addressBookEntityCollection = _repository.GetAddresses();
         }
         #endregion

@@ -12,9 +12,9 @@ namespace OnlineAddressBook.App.DataRepositories.Database
         #endregion
 
         #region Constructor
-        public SQLDatabaseRepository()
+        public SQLDatabaseRepository(OnlineAddressBookDbContext dbContext)
         {
-            _context = new OnlineAddressBookDbContext();
+            _context = dbContext;
         }
         #endregion
 
